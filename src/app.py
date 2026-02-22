@@ -11,7 +11,7 @@ class App:
     """
     def __init__(self):
         pygame.init()
-        self.screen = pygame.display.set_mode((256, 240), pygame.SCALED | pygame.OPENGL | pygame.DOUBLEBUF, vsync = False) 
+        self.screen = pygame.display.set_mode((256, 240), pygame.SCALED | pygame.OPENGL | pygame.DOUBLEBUF, vsync = True) 
         self.clock = pygame.time.Clock() 
         self.dt = 0
         self.timer = 0

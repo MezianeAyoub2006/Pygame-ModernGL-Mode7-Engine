@@ -54,10 +54,10 @@ void main() {
         color = texture(tex, pixel);
     }
 
-    // Fog
-    vec4 fog_color = vec4(0.4, 0.7, 1.0, 1.0);  // même couleur que le ciel
-    float fog_start = 20.0;   // distance où le fog commence
-    float fog_end   = 100.0;  // distance où c'est 100% fog
+    
+    vec4 fog_color = vec4(0.4, 0.7, 1.0, 1.0);  
+    float fog_start = 20.0;   
+    float fog_end   = 100.0;  
     float fog_factor = clamp((z - fog_start) / (fog_end - fog_start), 0.0, 1.0);
     
     fragColor = mix(color, fog_color, fog_factor);
