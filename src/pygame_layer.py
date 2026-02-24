@@ -1,12 +1,13 @@
 from .shader_pass import ShaderPass 
+
 import pygame
 import moderngl
 
 class PygameLayer(ShaderPass):
     """ 
-    Small abstraction over ShaderPass, used to handle pygame graphics
+    Small abstraction over ShaderPass, used to handle pygame graphics.
     """
-    def __init__(self, app, frag_prog=None):
+    def __init__(self, app, frag_prog = None):
         self._surf = pygame.Surface(app.display_size, pygame.SRCALPHA)
         super().__init__(app, frag_prog)
         tex = app.gl_ctx.texture(app.display_size, 4)
@@ -18,7 +19,6 @@ class PygameLayer(ShaderPass):
 
     def render(self):
         tex, _ = self.textures["tex"]
-        
         tex.write(pygame.image.tobytes(self._surf, "RGBA", True))
         self._surf.fill((0, 0, 0, 0))
         super().render()

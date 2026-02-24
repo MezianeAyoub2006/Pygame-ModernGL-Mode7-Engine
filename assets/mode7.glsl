@@ -11,6 +11,7 @@ uniform float player_y;
 uniform float player_z;
 uniform float player_angle;
 uniform float horizon_height;
+uniform float time;
 
 void main() {
     float screenY = 1.0 - uv.y;
@@ -46,6 +47,8 @@ void main() {
         A * xi2 + B * yi2 + player_x,
         C * xi2 + D * yi2 + player_y
     );
+
+
 
     vec4 color;
     if (pixel.x < 0.0 || pixel.x > 1.0 || pixel.y < 0.0 || pixel.y > 1.0) {
