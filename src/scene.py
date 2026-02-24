@@ -15,12 +15,16 @@ class Scene:
     def __init__(self, app:"App"):
         self.app = app 
         self._fonts = {}
-        with open("assets/mode7.glsl", "r", encoding = "utf-8") as f:
+        with open("shaders/outline.glsl", "r", encoding = "utf-8") as f:
+            self.hud = PygameLayer(app, f.read()) 
+        with open("shaders/mode7.glsl", "r", encoding = "utf-8") as f:
             self.ground = ShaderPass(app, f.read()) 
         self.ground.load_texture("tex", "assets/ground.png", 0)
         self.ground.load_texture("tex_infinite", "assets/ground-infinite.png", 1)
-        with open("assets/outline.glsl", "r", encoding = "utf-8") as f:
-            self.hud = PygameLayer(app, f.read()) 
+      
+        self.init_player_data()
+
+    def init_player_data(self) -> None:
         self.player_x = 0.5
         self.player_y = 0
         self.player_z = 3
