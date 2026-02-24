@@ -3,7 +3,7 @@ if TYPE_CHECKING:
     from .app import App
 
 INTERNAL_W, INTERNAL_H = 256, 240
-WINDOW_SCALE = 3
+WINDOW_SCALE = 2
 
 import pygame 
 
