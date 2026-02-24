@@ -9,9 +9,9 @@ You will need python 3.12 and the following modules :
 
 ### Controls 
 
-LEFT / RIGHT : horizon 
-UP / DOWN : z 
-D / Q : angle 
-Z / S : Forward / Backward
+* LEFT / RIGHT : horizon 
+* UP / DOWN : z 
+* D / Q : angle 
+* Z / S : Forward / Backward
 
 Enjoy!
